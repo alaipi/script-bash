@@ -1,17 +1,17 @@
 #!/bin/bash
 echo " "
-echo " Choose the format you want to download"
-echo " (1)Download 1080P Video and best Audio with all subs"
-echo " (2)Download Audio stream and transfer to mp3 formaet"
-echo " (3)Download best audio and best audio with all subs(for low resolution video"
+echo " Choose the format you want to download:"
+echo " (1)Download 1080P Video and the best Audio with all subs"
+echo " (2)Download Audio stream and transfer to mp3 format"
+echo " (3)Download the best audio and the best audio with all subs (for low resolution video)"
 echo " "
 read choice
-
-echo "Input youtube URL you wanna download"
+echo " You choose method No.$choice to download youetube"
+echo "  "
+echo " Input youtube URL you wanna download:"
 echo " "
 read URL
-
-echo " youtube-dl is starting to download what you want!!!!!"
+title=`youtube-dl -qe $URL`;echo " youtube-dl is starting to download \" $title \" "
 echo " "
 case $choice in
        1) youtube-dl -f 'bestvideo[height<=1080]+bestaudio[ext=m4a]' --write-sub --embed-sub --all-subs $URL;;
