@@ -14,7 +14,7 @@ read URL
 title=`youtube-dl -qe $URL`;echo " youtube-dl is starting to download \" $title \" "
 echo " "
 case $choice in
-       1) youtube-dl -f 'bestvideo[height<=1080]+bestaudio[ext=m4a]' --write-sub --embed-sub --all-subs $URL;;
-       2) youtube-dl --extract-audio --audio-format mp3 $URL;;
-       3) youtube-dl --write-sub --embed-sub --all-subs -f best $URL;;
+       1) youtube-dl -o '%(title)s.%(ext)s' -f 'bestvideo[height<=1080]+bestaudio[ext=m4a]' --write-sub --embed-sub --all-subs $URL;;
+       2) youtube-dl -o '%(title)s.%(ext)s' --extract-audio --audio-format mp3 $URL;;
+       3) youtube-dl -o '%(title)s.%(ext)s' --write-sub --embed-sub --all-subs -f best $URL;;
 esac
